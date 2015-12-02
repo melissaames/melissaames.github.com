@@ -332,8 +332,49 @@
             
       
         <footer class="center">
+        
+        <script>
+          $('#name').keyup(function(){
+  $('.name').addClass('typing');
+  if( $(this).val().length == 0 ) {
+      $('.name').removeClass('typing');
+  }
+});
+$('#email').keyup(function(){
+  $('.email').addClass('typing');
+  if( $(this).val().length == 0 ) {
+      $('.email').removeClass('typing');
+  }
+});
+$('#message').keyup(function(){
+  $('.message').addClass('typing');
+  if( $(this).val().length == 0 ) {
+      $('.message').removeClass('typing');
+  }
+});
+</script>
+        
+        
+        
         	
-       
+       <form class="contact-form">
+  <div class="name">
+    <label for="name">Full Name</label>
+    <input type="text" id="name" />
+  </div>  
+  <div class="email">
+    <label for="email">Email</label>
+    <input type="text" id="email" />
+  </div>
+  <div class="message">
+    <label for="message">Message</label>
+    <textarea name="message" id="message"></textarea>
+  </div>
+  <div class="submit">
+    
+    <input type="submit" value="Send" class="button" />
+  </div>
+</form>
         
                 <small>Designed and Developed by Melissa Ames</small>
             </footer>
