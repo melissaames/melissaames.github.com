@@ -274,19 +274,6 @@ footer {
 	-webkit-box-sizing: border-box;
 }
 
-.zoom-container-work {
-	position: relative;
-	overflow: hidden;
-	display: inline-block;
-	width: 20%;
-	font-size: 16px;
-	font-size: 1rem;
-	border: 1px solid #212121;
-	vertical-align: top;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-}
 .zoom-container img {
 	display: block;
 	width: 100%;
