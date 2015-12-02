@@ -332,119 +332,50 @@
             
       
         <footer class="center">
-        	<script>
-        	$(document).ready(function(){
-  
-  $("form").validate({
-        lang: 'de',
-        rules: {
-            name:{
-                minlength: 3,
-                maxlength: 30,
-                required: true
-            },
-            email:{
-                minlength: 3,
-                maxlength: 20,
-                required: true,
-                email: true
-            },
-            telefon:{
-                number: true
-            }
-        },
-        highlight: function (element) {
-            $(element).closest('.form-group').removeClass('has-success').addClass('has-error')
-            $(element).parent().find('.form-control-feedback').removeClass('glyphicon-ok').addClass('glyphicon-remove');
-        },
-        unhighlight: function (element) {
-            $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-            $(element).parent().find('.form-control-feedback').removeClass('glyphicon-remove').addClass('glyphicon-ok');
-        },
-        errorClass: 'help-block',
-        errorPlacement: function (error, element) {
-            if (element.parent('.input-group').length) {
-              error.insertAfter(element.parent());
-            } else {
-              error.insertAfter(element);
-            }
-        },
-        submitHandler: function() {
-            var data = $("#contact").serialize();
-
-            $.ajax({
-               type	  : "POST",
-               url 	  : "ajax/email.php",
-               data    : data,
-               success : function(q)
-					{
-                 $("#ContactFormDiv").html(q);
-					}
-            });
-        }     
-    }); 
-
-    $('#cancel').on('click', function () {
-        $("#contact").validate().resetForm();
-        $("#contact").find(".has-error, .has-success, .glyphicon-ok, .glyphicon-remove").removeClass("has-error has-success glyphicon-ok glyphicon-remove");
-    });
-    
-    }); 
-      </script>  	
         	
-        <body>
-  
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6">
-      <div id="ContactFormDiv"></div>
-<form class="form" method="post" action="" name="contact" id="contact">
-  <fieldset>
-    <legend> Contact Me </legend>
- 
-          <div class="form-group has-feedback"> 
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span> 
-              <input type="text" class="form-control" id="name" name="name" placeholder="Name" />
-              <span class="form-control-feedback glyphicon"></span>
-            </div>              
-          </div>   
-          
-          <div class="form-group has-feedback">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-              <input type="text" class="form-control" id="email" name="email" placeholder="E-Mail"/>
-              <span class="form-control-feedback glyphicon"></span>
-            </div>   
-          </div>
-          
-          <div class="form-group has-feedback">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-              <input type="text" class="form-control" id="telefon" name="phone" placeholder="Phone"/> 
-              <span class="form-control-feedback glyphicon"></span>  
+        	
+ 	<div class="col s12">s12</div><div class="container">
+    <div class="row">
+        <div class="col m10 offset-m1 s12">
+            <h2 class="center-align">Contact Form</h2>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col m6 s12">
+                            <input id="first_name" type="text" class="validate">
+                            <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col m6 s12">
+                            <input id="last_name" type="text" class="validate">
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col m6 s12">
+                            <i class="mdi-content-mail prefix"></i>
+                            <input id="email" type="email" class="validate" required>
+                            <label for="email">Email</label>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="message" class="materialize-textarea"></textarea>
+                          <label for="message">Message</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col m12">
+                         <p class="right-align"><button class="btn btn-large waves-effect waves-light" type="button" name="action">Send Message</button></p>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </div>
-          
-          <div class="form-group has-feedback">
-            <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-              <textarea type="text" id="message" class="form-control" name="message" rows="10" cols="40" placeholder="Message"></textarea>
-              <span class="form-control-feedback glyphicon"></span>
-            </div>
-          </div>
-
-          <div class="form-group"> 
-            <button type="submit" id="submit" class="btn btn-primary btn-lg">Submit</button>  
-            <button type="reset" id="cancel" class="btn btn-danger btn-lg">Clear</button> 
-          </div>
-          
-  </fieldset>
-</form>    
-
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
-		
+        </div>
+    </div>
+</div>
+        	
+        
                 <small>Designed and Developed by Melissa Ames</small>
             </footer>
 
